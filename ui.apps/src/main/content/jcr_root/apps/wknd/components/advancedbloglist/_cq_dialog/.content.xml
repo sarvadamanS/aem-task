@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jackrabbit/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          jcr:primaryType="cq:Dialog"
+          title="Advanced Blog List Dialog"
+          xtype="dialog"
+          width="600">
+    <items jcr:primaryType="cq:WidgetGroup">
+        <someProperty
+            jcr:primaryType="cq:TextField"
+            fieldLabel="Some Property"
+            name="./someProperty"/>
+    </items>
+</jcr:root>

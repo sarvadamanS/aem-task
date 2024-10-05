@@ -1,0 +1,23 @@
+<div class="advancedbloglist">
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search for blog posts..." />
+  </div>
+  <div class="blog-posts">
+    <ul>
+      <li data-sly-repeat.post="${blogModel.allBlogPosts}">
+        <h3>${post.title}</h3>
+        <p>Author: ${post.author}</p>
+        <p>Category: ${post.category}</p>
+        <p>${post.content}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="pagination">
+    <!-- Pagination controls -->
+  </div>
+  <div id="related-posts">
+    <!-- Related posts will be dynamically rendered here -->
+  </div>
+</div>
+
+<script src="/etc/clientlibs/wknd/components/advancedbloglist/advancedbloglist.js"></script>
