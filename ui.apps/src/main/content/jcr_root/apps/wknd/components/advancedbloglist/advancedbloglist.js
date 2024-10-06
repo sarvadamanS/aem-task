@@ -1,44 +1,50 @@
-(function (document, $) {
-  $(document).ready(function () {
-    const cachedData = localStorage.getItem("blogData");
-    if (cachedData) {
-      renderBlogPosts(JSON.parse(cachedData));
-    } else {
-      $.get("/bin/wknd/blogdata", function (data) {
-        localStorage.setItem("blogData", JSON.stringify(data));
-        renderBlogPosts(data);
-      });
-    }
-  });
+"use strict";
 
-  function renderBlogPosts(posts) {
-    const filteredPosts = applyFilters(posts);
-    const blogPostsContainer = $(".blog-posts ul");
-    blogPostsContainer.empty(); // Clear existing posts
+use(function () {
+  var data = {};
+  data.pageTitle = currentPage.properties["jcr:title"];
+  data.title = granite.resource.properties["title"];
+  data.description = granite.resource.properties["description"];
+  console.log("yea");
+  // Sample blog data, replace this with your dynamic fetching logic
+  data.blogPosts = [
+    {
+      title: "Understanding AEM",
+      content: "Content about AEM.",
+      author: "Author 1",
+      category: "Category 1",
+    },
+    {
+      title: "Getting Started with AEM",
+      content: "Beginner's guide to AEM.",
+      author: "Author 2",
+      category: "Category 1",
+    },
+    {
+      title: "AEM Best Practices",
+      content: "Best practices for AEM.",
+      author: "Author 3",
+      category: "Category 2",
+    },
+    {
+      title: "Advanced AEM Techniques",
+      content: "Advanced techniques for AEM.",
+      author: "Author 4",
+      category: "Category 2",
+    },
+    {
+      title: "Troubleshooting AEM",
+      content: "Common issues and solutions.",
+      author: "Author 5",
+      category: "Category 3",
+    },
+    {
+      title: "AEM Security Practices",
+      content: "How to secure your AEM instance.",
+      author: "Author 6",
+      category: "Category 3",
+    },
+  ];
 
-    filteredPosts.forEach((post) => {
-      const postHtml = `
-        <li>
-          <h3>${post.title}</h3>
-          <p>Author: ${post.author}</p>
-          <p>Category: ${post.category}</p>
-          <p>${post.content}</p>
-        </li>
-      `;
-      blogPostsContainer.append(postHtml);
-    });
-  }
-
-  function applyFilters(posts) {
-    const searchText = $("#search").val().toLowerCase();
-    return posts.filter((post) =>
-      post.title.toLowerCase().includes(searchText)
-    );
-  }
-
-  // Event listener for the search input
-  $("#search").on("input", function () {
-    const cachedData = JSON.parse(localStorage.getItem("blogData"));
-    renderBlogPosts(cachedData);
-  });
-})(document, jQuery);
+  return data;
+});

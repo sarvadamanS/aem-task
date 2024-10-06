@@ -1,23 +1,28 @@
-<div class="advancedbloglist">
-  <div class="search-bar">
-    <input type="text" id="search" placeholder="Search for blog posts..." />
-  </div>
-  <div class="blog-posts">
-    <ul>
-      <li data-sly-repeat.post="${blogModel.allBlogPosts}">
-        <h3>${post.title}</h3>
-        <p>Author: ${post.author}</p>
-        <p>Category: ${post.category}</p>
-        <p>${post.content}</p>
-      </li>
-    </ul>
-  </div>
-  <div class="pagination">
-    <!-- Pagination controls -->
-  </div>
-  <div id="related-posts">
-    <!-- Related posts will be dynamically rendered here -->
-  </div>
-</div>
+<sly data-sly-use.data="${'advancedbloglist.js'}">
+  <div class="advancedbloglist">
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search for blog posts..." />
+    </div>
 
-<script src="/etc/clientlibs/wknd/components/advancedbloglist/advancedbloglist.js"></script>
+    <div class="blog-posts">
+      <ul>
+        <li data-sly-list="${data.blogPosts}">
+          <h3>${item.title}</h3>
+          <p>${item.content}</p>
+          <p><strong>Author:</strong> ${item.author}</p>
+          <p><strong>Category:</strong> ${item.category}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pagination">
+      <button id="prevPage" disabled>Previouss</button>
+      <span id="pageNumber">1</span>
+      <button id="nextPage">Next</button>
+    </div>
+
+    <div id="related-posts">
+      <!-- Related posts will be dynamically rendered here -->
+    </div>
+  </div>
+</sly>
