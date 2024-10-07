@@ -1,73 +1,20 @@
-<sly data-sly-use.data="${'advancedbloglist.js'}">
+<sly>
+  <!-- Include the Client Library -->
+  <cq:includeClientLib categories="wknd.advancedbloglist" />
+
   <div class="advancedbloglist">
     <h2>Blog List Component</h2>
 
     <!-- Search Bar -->
     <div class="search-bar">
-      <input
-        type="text"
-        id="search"
-        placeholder="Search for blog posts..."
-        onkeyup="filterPosts()"
-      />
+      <input type="text" id="search" placeholder="Search for blog posts..." />
     </div>
 
     <!-- Blog Posts List -->
     <div class="blog-posts">
       <ul id="postList">
-        <sly data-sly-list.post="${data.blogPosts}">
-          <li class="blog-post">
-            <!-- Use the 'text' context to escape HTML and prevent security issues -->
-            <h3>${post.title @ context='text'}</h3>
-            <p>${post.content @ context='text'}</p>
-            <p><strong>Author:</strong> ${post.author @ context='text'}</p>
-            <p><strong>Category:</strong> ${post.category @ context='text'}</p>
-          </li>
-        </sly>
+        <!-- JavaScript will dynamically populate this -->
       </ul>
     </div>
-
-    <!-- Pagination (for future extension) -->
-    <div class="pagination">
-      <button id="prevPage" disabled>Previous</button>
-      <span id="pageNumber">1</span>
-      <button id="nextPage">Next</button>
-    </div>
   </div>
-
-  <script>
-    function filterPosts() {
-      const query = document.getElementById("search").value.toLowerCase();
-      const posts = document.querySelectorAll(".blog-post");
-      fetch("/bin/simple", {
-        method: "GET", // Specify the request method as GET
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              "Network response was not ok " + response.statusText
-            );
-          }
-          return response.json(); // Parse the JSON from the response
-        })
-        .then((data) => {
-          // Handle the data received from the servlet here
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching blog posts:", error);
-        });
-
-      posts.forEach((post) => {
-        const title = post.querySelector("h3").innerText.toLowerCase();
-        const content = post.querySelector("p").innerText.toLowerCase();
-
-        if (title.includes(query) || content.includes(query)) {
-          post.style.display = "";
-        } else {
-          post.style.display = "none";
-        }
-      });
-    }
-  </script>
 </sly>
