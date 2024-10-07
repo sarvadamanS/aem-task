@@ -1,3 +1,122 @@
-.sarvadaman {
-  background-color: aqua;
+body {
+  font-family: Arial, sans-serif;
+  background-color: transparent; /* Light background for better contrast */
+  color: #333; /* Dark text for readability */
+  margin: 0;
+  padding: 20px;
+}
+
+.advancedbloglist {
+  background-color: #fff; /* White background for the component */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Spacing within the component */
+  max-width: 800px; /* Max width for the component */
+  margin: auto; /* Center the component */
+}
+
+h2 {
+  color: #4a90e2; /* Blue color for the header */
+  font-size: 2em; /* Larger font size for the title */
+  text-align: center; /* Center the title */
+}
+
+.blogs-message {
+  color: #e67e22; /* Orange for loading message */
+  font-size: 1.2em; /* Slightly larger font */
+  text-align: center; /* Center the loading message */
+  display: none; /* Hidden by default, shown when loading */
+}
+
+.search-bar {
+  margin-bottom: 20px; /* Spacing below search bar */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center the search bar */
+}
+
+.search-bar input {
+  padding: 10px; /* Spacing inside the input */
+  border: 2px solid #4a90e2; /* Blue border */
+  border-radius: 5px; /* Rounded corners for input */
+  width: 80%; /* Full width for smaller screens */
+  max-width: 400px; /* Max width for input */
+  transition: border-color 0.3s; /* Transition effect for border */
+}
+
+.search-bar input:focus {
+  border-color: #e67e22; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.sort-options {
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center the sort options */
+  margin-bottom: 20px; /* Spacing below sort options */
+}
+
+.sort-options label {
+  margin: 0 10px; /* Spacing around labels */
+}
+
+.sort-options select {
+  padding: 10px; /* Spacing inside select */
+  border: 2px solid #4a90e2; /* Blue border */
+  border-radius: 5px; /* Rounded corners for select */
+  background-color: #ffffff; /* White background for select */
+  transition: border-color 0.3s; /* Transition effect for border */
+}
+
+.sort-options select:focus {
+  border-color: #e67e22; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.blog-posts {
+  margin-bottom: 20px; /* Spacing below posts */
+}
+
+.blog-post {
+  border-bottom: 1px solid #ddd; /* Separator between posts */
+  padding: 15px 0; /* Spacing above and below each post */
+}
+
+.blog-post h3 {
+  color: #4a90e2; /* Blue for post title */
+  margin: 0; /* Remove default margin */
+}
+
+.blog-post p {
+  margin: 5px 0; /* Spacing around paragraphs */
+}
+
+.pagination {
+  display: flex; /* Flexbox for pagination controls */
+  justify-content: center; /* Center the pagination controls */
+  align-items: center; /* Center vertically */
+}
+
+.pagination button {
+  padding: 10px 20px; /* Spacing inside buttons */
+  margin: 0 5px; /* Spacing around buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  background-color: #4a90e2; /* Blue background for buttons */
+  color: white; /* White text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Transition effect for background */
+}
+
+.pagination button:hover {
+  background-color: #e67e22; /* Change background on hover */
+}
+
+.pagination button:disabled {
+  background-color: #ddd; /* Gray background for disabled buttons */
+  cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+}
+
+@media (max-width: 600px) {
+  .search-bar input {
+    width: 100%; /* Full width for smaller screens */
+  }
 }
