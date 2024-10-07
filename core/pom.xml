@@ -81,6 +81,14 @@ Import-Package: javax.annotation;version=0.0.0,*
     </build>
 
     <dependencies>
+    <dependency>
+	<artifactId>gson</artifactId>
+	<groupId>com.google.code.gson</groupId>
+</dependency>
+  <dependency>
+	<artifactId>cq-wcm-api</artifactId>
+	<groupId>com.day.cq.wcm</groupId>
+</dependency>
         <dependency>
             <groupId>uk.org.lidalia</groupId>
             <artifactId>slf4j-test</artifactId>

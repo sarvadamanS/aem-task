@@ -2,11 +2,8 @@
 
 use(function () {
   var data = {};
-  data.pageTitle = currentPage.properties["jcr:title"];
-  data.title = granite.resource.properties["title"];
-  data.description = granite.resource.properties["description"];
-  console.log("yea");
-  // Sample blog data, replace this with your dynamic fetching logic
+  console.log("abcd");
+  // Extended dummy blog posts data
   data.blogPosts = [
     {
       title: "Understanding AEM",
@@ -43,6 +40,36 @@ use(function () {
       content: "How to secure your AEM instance.",
       author: "Author 6",
       category: "Category 3",
+    },
+    {
+      title: "AEM Optimizations",
+      content: "How to optimize your AEM instance.",
+      author: "Author 7",
+      category: "Category 1",
+    },
+    {
+      title: "Securing AEM Projects",
+      content: "Security guide for AEM.",
+      author: "Author 8",
+      category: "Category 2",
+    },
+    {
+      title: "AEM Troubleshooting Guide",
+      content: "Troubleshooting AEM issues.",
+      author: "Author 9",
+      category: "Category 3",
+    },
+    {
+      title: "Deploying AEM Projects",
+      content: "Deployment strategies for AEM.",
+      author: "Author 10",
+      category: "Category 1",
+    },
+    {
+      title: "AEM Component Development",
+      content: "How to develop custom components in AEM.",
+      author: "Author 11",
+      category: "Category 2",
     },
   ];
 
